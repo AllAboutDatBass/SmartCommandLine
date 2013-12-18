@@ -90,6 +90,8 @@ namespace SCL
             
             cmd.BeginOutputReadLine();
             cmd.BeginErrorReadLine();
+
+						this.tbCommands.Focus();
         }
 
         void cmd_Exited(object sender, EventArgs e)
@@ -125,6 +127,8 @@ namespace SCL
             {
                 textBox.Clear();
             }
+
+						textBox.Focus();
         }
 
         void cmd_ErrorDataReceived(
