@@ -216,7 +216,7 @@ namespace SCL
                     // retain where we were:
                     // _wasDir = cmd   ;
 
-                    _wasDir = ;
+                    _wasDir = "";
                     
                     // strip out the special whitespace characters:
                     tbCommands.Text = tbCommands.Text.Replace((char)0x00A0, ' ');
@@ -344,9 +344,11 @@ namespace SCL
                 }
                 
                 fileIterator = 0;
-                
+
+								string path = Directory.GetCurrentDirectory();
+
                 // collect files:
-                string[] list = Directory.GetFiles("C:\\Temp\\", search, SearchOption.TopDirectoryOnly);
+                string[] list = Directory.GetFiles(path, search, SearchOption.TopDirectoryOnly);
                 
                 foreach (string filename in list)
                 {
